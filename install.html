@@ -115,6 +115,55 @@
         display: inline-block;
         margin: 4px 0;
       }
+      .cmd-box {
+        position: relative;
+        background: rgba(0, 0, 0, 0.45);
+        border: 1px solid var(--panel-border);
+        border-radius: 12px;
+        padding: 16px 64px 16px 18px;
+        margin: 12px 0 6px;
+      }
+      .cmd-box code {
+        background: transparent;
+        padding: 0;
+        color: #e2e8f0;
+        font-size: 0.95em;
+        line-height: 1.5;
+        word-break: break-all;
+        white-space: pre-wrap;
+        display: block;
+      }
+      .copy-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: rgba(124, 58, 237, 0.4);
+        border: 1px solid rgba(124, 58, 237, 0.5);
+        color: white;
+        padding: 6px 12px;
+        border-radius: 8px;
+        font-size: 0.82rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.15s ease;
+      }
+      .copy-btn:hover { background: rgba(124, 58, 237, 0.6); }
+      .copy-btn[data-copied="true"] {
+        background: rgba(34, 197, 94, 0.6);
+        border-color: rgba(34, 197, 94, 0.7);
+      }
+      kbd {
+        display: inline-block;
+        background: rgba(15, 23, 42, 0.95);
+        border: 1px solid rgba(148, 163, 184, 0.3);
+        border-bottom-width: 2px;
+        border-radius: 6px;
+        padding: 2px 8px;
+        font-family: 'SFMono-Regular', ui-monospace, monospace;
+        font-size: 0.85em;
+        color: #f1f5f9;
+        margin: 0 2px;
+      }
       .badge {
         display: inline-block;
         background: rgba(124, 58, 237, 0.18);
@@ -147,15 +196,27 @@
 
       <section class="panel" id="panel-mac" role="tabpanel" aria-labelledby="tab-mac" hidden>
         <h2>macOS 설치</h2>
-        <a class="download-button" href="./install-mac.command" download>⬇️ install-mac.command 다운로드</a>
+        <p><b>가장 쉬운 방법:</b> Spotlight로 <b>"터미널"</b>을 열고 아래 한 줄을 붙여넣은 뒤 Enter.</p>
+        <div class="cmd-box">
+          <code id="mac-curl">curl -fsSL https://decordinated.github.io/moodlabs-ext-downloads/install-mac.command | bash</code>
+          <button class="copy-btn" data-copy="mac-curl">복사</button>
+        </div>
+        <p style="font-size: 0.9rem;">이 한 줄이면 Gatekeeper 경고 없이 바로 실행됩니다. (Homebrew/nvm 같은 도구도 쓰는 방식)</p>
 
-        <h3>1. 다운로드한 파일 실행</h3>
-        <p>Finder에서 <code>install-mac.command</code> 파일을 <b>우클릭 → 열기</b>를 눌러주세요. (첫 실행 시 macOS 보안 정책 때문에 더블클릭은 차단됩니다.)</p>
+        <h3>또는 파일 다운로드 후 직접 실행</h3>
+        <a class="download-button" href="./install-mac.command" download>⬇️ install-mac.command 다운로드</a>
         <div class="note warning">
-          "확인되지 않은 개발자" 경고가 뜨면 <b>"열기"</b>를 다시 눌러주세요. 시스템 설정 &gt; 개인정보 &amp; 보안 &gt; <b>"확인 없이 열기"</b> 버튼을 눌러야 할 수도 있습니다.
+          더블클릭하면 <b>"Apple could not verify..."</b> 경고가 뜹니다. 우회 방법:<br>
+          <ol class="steps" style="margin-top: 8px;">
+            <li>다운로드한 파일을 더블클릭 (차단됨)</li>
+            <li><b>시스템 설정 → 개인정보 보호 및 보안</b>으로 이동</li>
+            <li>맨 아래로 스크롤 → 차단된 파일 옆 <b>"확인 없이 열기"</b> 클릭</li>
+            <li>다시 더블클릭 → 이번엔 실행됨</li>
+          </ol>
+          또는 터미널에서 <code>bash ~/Downloads/install-mac.command</code> 한 줄 실행해도 됩니다.
         </div>
 
-        <h3>2. 자동으로 진행되는 작업</h3>
+        <h3>스크립트가 자동으로 진행하는 작업</h3>
         <ol class="steps">
           <li>최신 버전 ZIP 다운로드 + SHA-256 검증</li>
           <li>아래 경로에 압축 해제: <span class="path">~/Library/Application Support/MoodLabs/extension</span></li>
@@ -163,7 +224,7 @@
           <li><code>chrome://extensions/</code> 페이지가 자동 오픈</li>
         </ol>
 
-        <h3>3. Chrome에서 마지막 단계 (첫 설치)</h3>
+        <h3>Chrome에서 마지막 단계 (첫 설치)</h3>
         <ol class="steps">
           <li>우상단 <b>Developer mode</b> 토글 켜기</li>
           <li><b>Load unpacked</b> 버튼 클릭</li>
@@ -176,15 +237,20 @@
 
       <section class="panel" id="panel-win" role="tabpanel" aria-labelledby="tab-win" hidden>
         <h2>Windows 설치</h2>
-        <a class="download-button" href="./install-windows.bat" download>⬇️ install-windows.bat 다운로드</a>
+        <p><b>가장 쉬운 방법:</b> <kbd>Win</kbd> + <kbd>R</kbd> 눌러 실행 창 열기 → 아래 한 줄을 붙여넣고 Enter.</p>
+        <div class="cmd-box">
+          <code id="win-run">powershell -NoProfile -ExecutionPolicy Bypass -Command "iex (iwr 'https://decordinated.github.io/moodlabs-ext-downloads/install.ps1' -UseBasicParsing).Content"</code>
+          <button class="copy-btn" data-copy="win-run">복사</button>
+        </div>
+        <p style="font-size: 0.9rem;">SmartScreen 경고 없이 바로 실행됩니다. (PowerShell 직접 열어서 위 한 줄을 실행해도 동일)</p>
 
-        <h3>1. 다운로드한 파일 실행</h3>
-        <p>다운로드 폴더에서 <code>install-windows.bat</code>를 <b>더블클릭</b>하세요.</p>
+        <h3>또는 파일 다운로드 후 직접 실행</h3>
+        <a class="download-button" href="./install-windows.bat" download>⬇️ install-windows.bat 다운로드</a>
         <div class="note warning">
-          Windows SmartScreen이 "PC를 보호했습니다"를 표시하면 <b>"추가 정보"</b> → <b>"실행"</b>을 눌러주세요.
+          더블클릭하면 SmartScreen이 <b>"Windows에서 PC를 보호했습니다"</b>를 표시할 수 있습니다. <b>"추가 정보"</b> → <b>"실행"</b>을 눌러주세요.
         </div>
 
-        <h3>2. 자동으로 진행되는 작업</h3>
+        <h3>스크립트가 자동으로 진행하는 작업</h3>
         <ol class="steps">
           <li>최신 버전 ZIP 다운로드 + SHA-256 검증</li>
           <li>아래 경로에 압축 해제: <span class="path">%LOCALAPPDATA%\MoodLabs\extension</span></li>
@@ -192,7 +258,7 @@
           <li><code>chrome://extensions/</code> 페이지가 자동 오픈</li>
         </ol>
 
-        <h3>3. Chrome에서 마지막 단계 (첫 설치)</h3>
+        <h3>Chrome에서 마지막 단계 (첫 설치)</h3>
         <ol class="steps">
           <li>우상단 <b>Developer mode</b> 토글 켜기</li>
           <li><b>Load unpacked</b> 버튼 클릭</li>
@@ -247,6 +313,33 @@
         });
 
         activate(detectOs());
+
+        document.querySelectorAll('.copy-btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var targetId = btn.getAttribute('data-copy');
+            var node = document.getElementById(targetId);
+            if (!node) return;
+            var text = node.textContent || '';
+            var done = function () {
+              btn.textContent = '복사됨';
+              btn.setAttribute('data-copied', 'true');
+              setTimeout(function () {
+                btn.textContent = '복사';
+                btn.removeAttribute('data-copied');
+              }, 1500);
+            };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(text).then(done, function () {});
+            } else {
+              var range = document.createRange();
+              range.selectNode(node);
+              var sel = window.getSelection();
+              sel.removeAllRanges();
+              sel.addRange(range);
+              try { document.execCommand('copy'); done(); } finally { sel.removeAllRanges(); }
+            }
+          });
+        });
       })();
     </script>
   </body>
