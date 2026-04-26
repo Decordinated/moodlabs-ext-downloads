@@ -1,0 +1,18 @@
+{
+  "name": "MoodLabs Extension Downloads",
+  "owner": "Decordinated",
+  "repo": "moodlabs-ext-downloads",
+  "baseUrl": "https://decordinated.github.io/moodlabs-ext-downloads",
+  "generatedAt": "2026-04-26T06:35:40.990Z",
+  "latest": "2.0.3",
+  "versions": [
+    {
+      "version": "2.0.3",
+      "fileName": "moodlabs-ext-v2.0.3.zip",
+      "fileSizeBytes": 1670951,
+      "sha256": "1cd20b8875cde2a819130af189dd639dcb5695b0de800ce18c82ff42fc2ccc99",
+      "updatedAt": "2026-04-26T06:35:40.930Z",
+      "downloadUrl": "https://decordinated.github.io/moodlabs-ext-downloads/moodlabs-ext-v2.0.3.zip"
+    }
+  ]
+}
