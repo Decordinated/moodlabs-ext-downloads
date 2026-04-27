@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-27T02:37:03.090Z",
+  "generatedAt": "2026-04-27T02:38:34.169Z",
   "latest": "1.0.1",
   "versions": [
     {
@@ -10,7 +10,7 @@
       "downloadUrl": "https://decordinated.github.io/moodlabs-ext-downloads/matching/moodlabs-matching-v1.0.1.json",
       "sha256": "a905f69526d12324542b2131a4cae24128efce88d1df29e894dfdd79f627ef73",
       "fileSizeBytes": 4418,
-      "updatedAt": "2026-04-27T02:37:03.019Z"
+      "updatedAt": "2026-04-27T02:38:34.102Z"
     },
     {
       "schemaVersion": 1,
@@ -19,7 +19,7 @@
       "downloadUrl": "https://decordinated.github.io/moodlabs-ext-downloads/matching/moodlabs-matching-v1.0.0.json",
       "sha256": "ce6244920e2e49955d54b02052e576fddd6bfcf0ea40f50ce4bdcca06a2dd2bd",
       "fileSizeBytes": 4418,
-      "updatedAt": "2026-04-27T02:37:03.018Z"
+      "updatedAt": "2026-04-27T02:38:34.102Z"
     }
   ]
 }
