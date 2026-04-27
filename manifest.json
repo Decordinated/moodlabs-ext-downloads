@@ -3,7 +3,7 @@
   "owner": "Decordinated",
   "repo": "moodlabs-ext-downloads",
   "baseUrl": "https://decordinated.github.io/moodlabs-ext-downloads",
-  "generatedAt": "2026-04-27T02:38:34.195Z",
+  "generatedAt": "2026-04-27T02:55:47.350Z",
   "latest": "2.0.46",
   "versions": [
     {
@@ -11,48 +11,8 @@
       "fileName": "moodlabs-ext-v2.0.46.zip",
       "fileSizeBytes": 1677581,
       "sha256": "c714b01aeb3a364db28ef833976eee4cd8fdc2aacfd5c12f9e57c6183bfc1905",
-      "updatedAt": "2026-04-27T02:38:34.167Z",
+      "updatedAt": "2026-04-27T02:55:47.120Z",
       "downloadUrl": "https://decordinated.github.io/moodlabs-ext-downloads/moodlabs-ext-v2.0.46.zip"
-    },
-    {
-      "version": "2.0.13",
-      "fileName": "moodlabs-ext-v2.0.13.zip",
-      "fileSizeBytes": 1672150,
-      "sha256": "d0388a92b81e7c68aa14d0e752741c5a9bc04d0d73720547c7f8858c038a3004",
-      "updatedAt": "2026-04-27T02:38:34.105Z",
-      "downloadUrl": "https://decordinated.github.io/moodlabs-ext-downloads/moodlabs-ext-v2.0.13.zip"
-    },
-    {
-      "version": "2.0.7",
-      "fileName": "moodlabs-ext-v2.0.7.zip",
-      "fileSizeBytes": 1669705,
-      "sha256": "9ce79813fc4fbf27de67732458a34d8c0560b86750724ec0796435ab9a33bf02",
-      "updatedAt": "2026-04-27T02:38:34.109Z",
-      "downloadUrl": "https://decordinated.github.io/moodlabs-ext-downloads/moodlabs-ext-v2.0.7.zip"
-    },
-    {
-      "version": "2.0.6",
-      "fileName": "moodlabs-ext-v2.0.6.zip",
-      "fileSizeBytes": 1492963,
-      "sha256": "1c7eb0352ca64eb9d9a3602f8c02f854301a2de3a61d4a98844696d140d8108e",
-      "updatedAt": "2026-04-27T02:38:34.108Z",
-      "downloadUrl": "https://decordinated.github.io/moodlabs-ext-downloads/moodlabs-ext-v2.0.6.zip"
-    },
-    {
-      "version": "2.0.4",
-      "fileName": "moodlabs-ext-v2.0.4.zip",
-      "fileSizeBytes": 1323212,
-      "sha256": "cfe432223281b48edc57306cf62a62e149fc9af8648fcac9de6925447b3cda54",
-      "updatedAt": "2026-04-27T02:38:34.107Z",
-      "downloadUrl": "https://decordinated.github.io/moodlabs-ext-downloads/moodlabs-ext-v2.0.4.zip"
-    },
-    {
-      "version": "2.0.3",
-      "fileName": "moodlabs-ext-v2.0.3.zip",
-      "fileSizeBytes": 1670951,
-      "sha256": "1cd20b8875cde2a819130af189dd639dcb5695b0de800ce18c82ff42fc2ccc99",
-      "updatedAt": "2026-04-27T02:38:34.106Z",
-      "downloadUrl": "https://decordinated.github.io/moodlabs-ext-downloads/moodlabs-ext-v2.0.3.zip"
     }
   ]
 }
