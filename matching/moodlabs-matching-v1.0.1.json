@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "matchingVersion": "1.0.1",
+  "generatedAt": "2026-04-27T01:58:48.524Z",
+  "actions": {
+    "download.single.mp3": {
+      "id": "download.single.mp3",
+      "label": "MP3 다운로드",
+      "description": "현재 곡 행의 메뉴를 열고 다운로드 메뉴로 들어가 MP3 항목을 실행합니다.",
+      "verificationHint": "MP3 항목을 누른 뒤 행 버튼 상태나 다음 메뉴 상태가 바뀌어야 합니다.",
+      "primaryStrategySequence": [
+        "row-menu-button",
+        "download-submenu-trigger",
+        "mp3-target"
+      ],
+      "fallbackStrategySequence": [
+        "generic-action-target"
+      ]
+    },
+    "download.single.wav": {
+      "id": "download.single.wav",
+      "label": "WAV 다운로드",
+      "description": "행 메뉴를 열고 다운로드 메뉴로 들어가 WAV 항목을 실행합니다.",
+      "verificationHint": "WAV 모달이 열리거나 다음 다운로드 단계가 진행 가능 상태가 되어야 합니다.",
+      "primaryStrategySequence": [
+        "row-menu-button",
+        "download-submenu-trigger",
+        "wav-target",
+        "download-file-target"
+      ],
+      "fallbackStrategySequence": [
+        "modal-close-button"
+      ]
+    },
+    "download.batch.mp3": {
+      "id": "download.batch.mp3",
+      "label": "전체 MP3 다운로드",
+      "description": "보이는 행 전체에 MP3 다운로드를 실행합니다.",
+      "verificationHint": "화면에 보이는 각 행의 MP3 상태가 진행 중이거나 완료 상태로 바뀌어야 합니다.",
+      "primaryStrategySequence": [
+        "visible-download-buttons"
+      ],
+      "fallbackStrategySequence": []
+    },
+    "download.batch.wav": {
+      "id": "download.batch.wav",
+      "label": "전체 WAV 다운로드",
+      "description": "보이는 행 전체에 WAV 다운로드를 실행합니다.",
+      "verificationHint": "화면에 보이는 각 행의 WAV 상태나 모달 단계가 각각 진행되어야 합니다.",
+      "primaryStrategySequence": [
+        "visible-wav-buttons"
+      ],
+      "fallbackStrategySequence": []
+    }
+  },
+  "strategies": {
+    "row-menu-button": {
+      "id": "row-menu-button",
+      "description": "행 단위 더보기 메뉴 버튼.",
+      "selectors": [
+        "button[aria-label=\"More options\"]",
+        "button[aria-label=\"More menu contents\"]",
+        "button[data-context-menu-trigger=\"true\"]"
+      ]
+    },
+    "download-submenu-trigger": {
+      "id": "download-submenu-trigger",
+      "description": "다운로드 하위 메뉴를 여는 항목.",
+      "selectors": [
+        "button[aria-label=\"Download\"]",
+        "[role=\"menuitem\"]",
+        "div.contents span"
+      ]
+    },
+    "mp3-target": {
+      "id": "mp3-target",
+      "description": "MP3 다운로드 메뉴 항목.",
+      "selectors": [
+        "button[aria-label=\"MP3 Audio\"]",
+        "[role=\"menuitemradio\"]",
+        "[role=\"menuitem\"]"
+      ]
+    },
+    "generic-action-target": {
+      "id": "generic-action-target",
+      "description": "메뉴 주변에서 넓게 탐색할 때 쓰는 예비 후보.",
+      "selectors": [
+        "button",
+        "[role=\"menuitem\"]",
+        "span"
+      ]
+    },
+    "wav-target": {
+      "id": "wav-target",
+      "description": "WAV 다운로드 메뉴 항목.",
+      "selectors": [
+        "button[aria-label=\"WAV Audio\"]",
+        "[role=\"menuitemradio\"]",
+        "[role=\"menuitem\"]"
+      ]
+    },
+    "download-file-target": {
+      "id": "download-file-target",
+      "description": "WAV 변환이 끝난 뒤 모달에서 누르는 최종 다운로드 버튼.",
+      "selectors": [
+        "div.modal-class button",
+        "[role=\"dialog\"] button"
+      ]
+    },
+    "modal-close-button": {
+      "id": "modal-close-button",
+      "description": "WAV 처리 뒤 모달을 닫을 때 쓰는 버튼.",
+      "selectors": [
+        "div.modal-class button",
+        "[role=\"dialog\"] button"
+      ]
+    },
+    "visible-download-buttons": {
+      "id": "visible-download-buttons",
+      "description": "화면에 보이는 MoodLabs MP3 버튼 묶음.",
+      "selectors": [
+        ".suno-download-button"
+      ]
+    },
+    "visible-wav-buttons": {
+      "id": "visible-wav-buttons",
+      "description": "화면에 보이는 MoodLabs WAV 버튼 묶음.",
+      "selectors": [
+        ".suno-wav-button"
+      ]
+    }
+  }
+}
