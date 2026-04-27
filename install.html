@@ -7,13 +7,13 @@
     <style>
       :root {
         color-scheme: dark;
-        --bg: #0b1020;
-        --panel: rgba(15, 23, 42, 0.92);
-        --panel-border: rgba(148, 163, 184, 0.18);
+        --bg: #100820;
+        --panel: rgba(48, 18, 78, 0.92);
+        --panel-border: rgba(192, 132, 252, 0.22);
         --text: #e2e8f0;
-        --muted: #94a3b8;
-        --accent: #7c3aed;
-        --accent-cyan: #06b6d4;
+        --muted: #b8a3d6;
+        --accent: #a855f7;
+        --accent-cyan: #f0abfc;
         --success: #22c55e;
       }
       * { box-sizing: border-box; }
@@ -21,7 +21,9 @@
         margin: 0;
         min-height: 100vh;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        background: radial-gradient(circle at top, #1e293b 0%, var(--bg) 50%);
+        background:
+          radial-gradient(circle at top, #2a1450 0%, var(--bg) 55%),
+          radial-gradient(circle at 80% 0%, rgba(244, 114, 182, 0.18), transparent 40%);
         color: var(--text);
         line-height: 1.6;
       }
@@ -36,7 +38,7 @@
         border-radius: 24px;
         padding: 32px;
         margin-bottom: 20px;
-        box-shadow: 0 20px 60px rgba(15, 23, 42, 0.35);
+        box-shadow: 0 20px 60px rgba(46, 16, 90, 0.45);
       }
       h1 { margin: 0 0 12px; font-size: clamp(1.8rem, 3.5vw, 2.5rem); }
       h2 { margin: 0 0 14px; font-size: 1.4rem; }
@@ -90,8 +92,8 @@
       }
       ol.steps li b { color: white; }
       .note {
-        background: rgba(124, 58, 237, 0.12);
-        border: 1px solid rgba(124, 58, 237, 0.3);
+        background: rgba(168, 85, 247, 0.14);
+        border: 1px solid rgba(192, 132, 252, 0.32);
         border-radius: 14px;
         padding: 14px 18px;
         font-size: 0.92rem;
@@ -137,8 +139,8 @@
         position: absolute;
         top: 10px;
         right: 10px;
-        background: rgba(124, 58, 237, 0.4);
-        border: 1px solid rgba(124, 58, 237, 0.5);
+        background: rgba(168, 85, 247, 0.42);
+        border: 1px solid rgba(192, 132, 252, 0.5);
         color: white;
         padding: 6px 12px;
         border-radius: 8px;
@@ -147,14 +149,14 @@
         cursor: pointer;
         transition: background 0.15s ease;
       }
-      .copy-btn:hover { background: rgba(124, 58, 237, 0.6); }
+      .copy-btn:hover { background: rgba(168, 85, 247, 0.6); }
       .copy-btn[data-copied="true"] {
         background: rgba(34, 197, 94, 0.6);
         border-color: rgba(34, 197, 94, 0.7);
       }
       kbd {
         display: inline-block;
-        background: rgba(15, 23, 42, 0.95);
+        background: rgba(20, 8, 40, 0.95);
         border: 1px solid rgba(148, 163, 184, 0.3);
         border-bottom-width: 2px;
         border-radius: 6px;
@@ -218,8 +220,8 @@
       }
       .badge {
         display: inline-block;
-        background: rgba(124, 58, 237, 0.18);
-        color: #ddd6fe;
+        background: rgba(168, 85, 247, 0.20);
+        color: #f5d0fe;
         border-radius: 999px;
         padding: 4px 12px;
         font-size: 0.85rem;
